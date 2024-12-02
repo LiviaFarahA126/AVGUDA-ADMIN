@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="groups.css">
+    <title>Groups - Avguda</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="logo">
+                <img src="images/logo.png" alt="Avguda Logo">
+                <h2>Avguda<span class="danger">Books</span></h2>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="books.html">
+                    <span class="material-icons-sharp">book</span>
+                    <h3>Books</h3>
+                <a href="groups.html" class="active">
+                    <span class="material-icons-sharp">group</span>
+                    <h3>Groups</h3>
+                <a href="events.html">
+                    <span class="material-icons-sharp">event</span>
+                    <h3>Events</h3>
+                </a>
+                <a href="users.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <div class="header">
+                <h1>Groups</h1>
+                <h2>Manage Groups</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Group ID</th>
+                            <th>Group Name</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data populated dynamically -->
+                    </tbody>
+                </table>
+                <button class="add-group" onclick="showAddGroupModal()">
+                    <span class="material-icons-sharp">add</span> Add Group
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Group Modal -->
+    <div class="modal" id="addGroupModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeAddGroupModal()">✖</button>
+            <h2>Add New Group</h2>
+            <form id="addGroupForm">
+                <label for="groupID">Group ID:</label>
+                <input type="text" id="groupID" required />
+
+                <label for="groupName">Group Name:</label>
+                <input type="text" id="groupName" required />
+
+                <label for="groupImage">Image:</label>
+                <input type="file" id="groupImage" accept="image/jpeg, image/png" required />
+
+                <img id="previewImage" src="" alt="Preview" style="display: none; width: 100px; margin-bottom: 1rem;" />
+
+                <label for="groupDescription">Description:</label>
+                <textarea id="groupDescription" rows="3" required></textarea>
+
+                <button type="submit">Add Group</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Group Modal -->
+    <div class="modal" id="editGroupModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeEditGroupModal()">✖</button>
+            <h2>Edit Group</h2>
+            <form id="editGroupForm">
+                <label for="editGroupID">Group ID:</label>
+                <input type="text" id="editGroupID" readonly />
+
+                <label for="editGroupName">Group Name:</label>
+                <input type="text" id="editGroupName" required />
+
+                <label for="editGroupImage">Image:</label>
+                <input type="file" id="editGroupImage" accept="image/jpeg, image/png" />
+
+                <img id="editPreviewImage" src="" alt="Preview" style="display: none; width: 100px; margin-bottom: 1rem;" />
+
+                <label for="editGroupDescription">Description:</label>
+                <textarea id="editGroupDescription" rows="3" required></textarea>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="groups.js"></script>
+</body>
+
+</html>

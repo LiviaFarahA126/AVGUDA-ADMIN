@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="groups.css">
+    <title>Books - Avguda Bookstore</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="logo">
+                <img src="images/logo.png" alt="Avguda Logo">
+                <h2>Avguda<span class="danger">Books</span></h2>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="books.html" class="active">
+                    <span class="material-icons-sharp">book</span>
+                    <h3>Books</h3>
+                <a href="groups.html">
+                    <span class="material-icons-sharp">group</span>
+                    <h3>Groups</h3>
+                <a href="events.html">
+                    <span class="material-icons-sharp">event</span>
+                    <h3>Events</h3>
+                </a>
+                <a href="users.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+        <!-- Main Content -->
+        <main>
+            <div class="header">
+                <h1>Books</h1>
+                <h2>Manage Books</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Buku</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be dynamically populated using JavaScript -->
+                    </tbody>
+                </table>
+                <button class="add-book" onclick="showAddBookModal()">
+                    <span class="material-icons-sharp">add</span> Tambahkan Buku
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Adding Book -->
+    <div class="modal" id="addBookModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeAddBookModal()">✖</button>
+            <h2>Tambahkan Buku Baru</h2>
+            <form id="addBookForm">
+                <label for="bookID">ID Buku:</label>
+                <input type="text" id="bookID" required />
+
+                <label for="bookImage">Gambar Buku:</label>
+                <input type="file" id="bookImage" accept="image/*" required />
+
+                <img id="previewImage" src="" alt="Preview" style="display: none; width: 100px; margin-bottom: 1rem;" />
+
+                <label for="bookTitle">Judul Buku:</label>
+                <input type="text" id="bookTitle" required />
+
+                <label for="bookAuthor">Penulis:</label>
+                <input type="text" id="bookAuthor" required />
+
+                <button type="submit">Tambah Buku</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Editing Book -->
+    <div id="editBookModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeEditBookModal()">✖</button>
+            <h2>Edit Buku</h2>
+            <form id="editBookForm">
+                <label for="editBookID">ID Buku:</label>
+                <input type="text" id="editBookID" readonly />
+
+                <label for="editBookImage">Gambar Buku:</label>
+                <input type="file" id="editBookImage" accept="image/*" />
+
+                <img id="editPreviewImage" src="" alt="Preview" style="display: none; width: 100px; margin-bottom: 1rem;" />
+
+                <label for="editBookTitle">Judul Buku:</label>
+                <input type="text" id="editBookTitle" required />
+
+                <label for="editBookAuthor">Penulis:</label>
+                <input type="text" id="editBookAuthor" required />
+
+                <button type="submit">Simpan Perubahan</button>
+            </form>
+        </div>
+    </div>
+    <script src="books.js"></script>
+</body>
+
+</html>

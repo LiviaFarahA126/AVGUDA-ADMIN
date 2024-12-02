@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="events.css">
+    <title>Events - Avguda Bookstore</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="logo">
+                <img src="images/logo.png" alt="Avguda Logo">
+                <h2>Avguda<span class="danger">Books</span></h2>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="books.html">
+                    <span class="material-icons-sharp">book</span>
+                    <h3>Books</h3>
+                <a href="groups.html">
+                    <span class="material-icons-sharp">group</span>
+                    <h3>Groups</h3>
+                <a href="events.html" class="active">
+                    <span class="material-icons-sharp">event</span>
+                    <h3>Events</h3>
+                </a>
+                <a href="users.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+        <!-- Main Content -->
+        <main>
+            <div class="header">
+                <h1>Events</h1>
+                <h2>Manage Events</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Event</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be dynamically populated using JavaScript -->
+                    </tbody>
+                </table>
+                <button class="add-book" onclick="showAddEventModal()">
+                    <span class="material-icons-sharp">add</span> Add Event
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Adding Event -->
+    <div class="modal" id="addEventModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeAddEventModal()">✖</button>
+            <h2>Add New Event</h2>
+            <form id="addEventForm">
+                <label for="eventID">ID Event:</label>
+                <input type="text" id="eventID" required />
+
+                <label for="eventImage">Event Image:</label>
+                <input type="file" id="eventImage" accept="image/jpeg, image/png" required />
+
+                <img id="previewImage" src="" alt="Preview" style="display: none; width: 100px; margin-bottom: 1rem;" />
+
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" required />
+
+                <label for="eventDescription">Description:</label>
+                <input type="text" id="eventDescription" required />
+
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Editing Event -->
+    <div class="modal" id="editEventModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeEditEventModal()">✖</button>
+            <h2>Edit Event</h2>
+            <form id="editEventForm">
+                <label for="editEventID">ID Event:</label>
+                <input type="text" id="editEventID" readonly />
+
+                <label for="editEventImage">Event Image:</label>
+                <input type="file" id="editEventImage" accept="image/jpeg, image/png" />
+
+                <img id="editPreviewImage" src="" alt="Preview" style="display: none; width: 100px; margin-bottom: 1rem;" />
+
+                <label for="editEventName">Event Name:</label>
+                <input type="text" id="editEventName" required />
+
+                <label for="editEventDescription">Description:</label>
+                <input type="text" id="editEventDescription" required />
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="events.js"></script>
+</body>
+
+</html>
